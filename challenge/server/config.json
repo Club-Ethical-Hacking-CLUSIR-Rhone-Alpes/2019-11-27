@@ -1,0 +1,19 @@
+{
+  "admin": {
+    "users": [
+      {
+        "uid": "naKLIALewhOLytheRgARyLEstEROCYpeDebOrANTIoNSioNJuLmaNtAtELOGEnaT",
+        "username": "EMFAdmin",
+        "password": "1smileSuck!"
+      },
+      {
+        "uid": "BLOquIRlowBeRWovERITinfaReliblAInOSCHUDeREDalGEAdeviEvErstEsHERI",
+        "username": "wwwadmin",
+        "password": "TExPASh"
+      }
+    ]
+  },
+  "vortex": {
+    "authorized_ua": "track-fantastic/vortex-2.4"
+  }
+}

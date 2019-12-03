@@ -1,0 +1,3 @@
+<Config>
+    <Endpoint name="tf-emf">${config.endpoint}</Endpoint>
+</Config>

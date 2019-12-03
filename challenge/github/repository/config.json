@@ -1,0 +1,14 @@
+{
+  "admin": {
+    "users": [
+      {
+        "uid": "000000",
+        "username": "admin",
+        "password": "admin"
+      }
+    ]
+  },
+  "vortex": {
+    "authorized_ua": "track-fantastic/vortex-2.4"
+  }
+}

@@ -1,0 +1,10 @@
+version: '2'
+services: 
+  track-fantastic:
+    image: track-fantastic
+    restart: always
+    build: .
+    network_mode: host
+    volumes:
+      - ./status:/var/www/html/status
+      - ./logs:/var/log/apache2

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="row justify-content-center mt-4">
+    <div class="col-lg-4">
+        <h1 class="text-center">Administration panel</h1>
+        <h2 class="text-center">Hello, {{name}} 
+            <small style="font-size: 60%;">
+                <a href="admin/logout" class="text-danger">logout</a>
+            </small>
+        </h2>
+        <hr />
+        {% for error in errors %}
+        <div class="alert alert-danger">{{error}}</div>
+        {% endfor %}
+
+        <ul class="list-group mt-5">
+            {% for item in items %}
+            <li class="list-group-item"><pre>{{item}}</pre></li>
+            {% else %}
+            <li class="list-group-item alert-warning">No files.</li>
+            {% endfor %}
+
+
+        </ul>
+
+    </div>
+</div>
+{% endblock body %}

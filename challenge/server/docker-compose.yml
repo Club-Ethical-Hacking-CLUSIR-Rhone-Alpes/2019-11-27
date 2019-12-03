@@ -1,0 +1,29 @@
+version: '2'
+services: 
+  track-fantastic:
+    image: track-fantastic
+    restart: always
+    build: .
+    network_mode: host
+    volumes:
+      - ./status:/var/www/html/status
+      - ./logs:/var/log/apache2
+
+  ftpd_server:
+    image: stilliard/pure-ftpd:hardened
+    restart: always
+    ports:
+      - "21:21"
+      - "30000-30009:30000-30009"
+    environment:
+      PUBLICHOST: "52.47.58.99"
+      FTP_USER_NAME: ftpadmin
+      FTP_USER_PASS: OWNTInEntINsyNaD
+      FTP_USER_HOME: /home/ftpadmin
+
+  mongo:
+    image: mongo:4.0
+    restart: always
+    ports:
+      - 27017:27017
+  

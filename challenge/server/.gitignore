@@ -1,0 +1,4 @@
+vendor
+composer.lock
+status/*.json
+!status/status.example.json

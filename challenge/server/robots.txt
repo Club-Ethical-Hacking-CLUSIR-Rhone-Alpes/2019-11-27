@@ -1,0 +1,12 @@
+# OneSmile Inc. / Edit-My-Face / Track-Fantastic
+User-agent: *
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /emf-admin/
+Disallow: /_emf_admin/
+Disallow: /_emf_tf_admin/
+Disallow: /wwwadmin/
+Disallow: /status/
+Disallow: /client/
+Disallow: /client/vortex/
+Noindex: *
