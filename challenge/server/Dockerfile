@@ -1,16 +1,15 @@
 FROM php:7.1-apache
 ENV TZ 'Europe/Paris'
 RUN echo $TZ > /etc/timezone && \
-    apt-get update && apt-get install -y tzdata libpq-dev libapache2-mod-security2 curl git && \
+    apt-get update && apt-get install -y tzdata libpq-dev libapache2-mod-security2 curl git libzip-dev && \
     rm /etc/localtime && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata && \
     apt-get clean && \
 	echo "date.timezone = Europe/Paris" > /usr/local/etc/php/php.ini && \
-	docker-php-ext-install -j$(nproc) pdo pdo_pgsql mbstring gettext
+	docker-php-ext-install -j$(nproc) pdo pdo_pgsql mbstring gettext zip
 WORKDIR /var/www/html
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
-    php -r "if (hash_file('sha384', 'composer-setup.php') === 'a5c698ffe4b8e849a443b120cd5ba38043260d5c4023dbf93e1558871f1f07f58274fc6f4c93bcfd858c6bd0775cd8d1') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
     php composer-setup.php && \
     php -r "unlink('composer-setup.php');"
 ADD composer.json .
@@ -27,5 +26,5 @@ ADD index.php .
 ADD html html
 ADD cu cu
 ADD config.json .
-RUN chmod 777 /var/log/apache2/post.log
+RUN touch /var/log/apache2/post.log && chmod 777 /var/log/apache2/post.log
 EXPOSE 6007
