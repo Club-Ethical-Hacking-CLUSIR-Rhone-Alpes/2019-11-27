@@ -9,7 +9,8 @@
     - https://docs.docker.com/compose/install/
 2. cloner ce dépôt:
     - `git clone https://github.com/Club-Ethical-Hacking-CLUSIR-Rhone-Alpes/2019-11-27.git`
-3. rendez-vous dans le répertoire du projet, puis dans `challenge/server` pour executer la commande suivante:
+3. rendez-vous dans le répertoire du projet, puis dans `challenge/server` pour executer les commandes suivante:
+    - `chmod 777 -R status`
     - `docker-compose build`
 
 Vous pouvez désormais lancer le challenge: `docker-compose up`
