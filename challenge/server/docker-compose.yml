@@ -2,16 +2,18 @@ version: '2'
 services: 
   track-fantastic:
     image: track-fantastic
-    restart: always
+    #restart: always
     build: .
-    network_mode: host
+    #network_mode: host
+    ports:
+      - 6007:6007
     volumes:
       - ./status:/var/www/html/status
       - ./logs:/var/log/apache2
 
   ftpd_server:
     image: stilliard/pure-ftpd:hardened
-    restart: always
+    #restart: always
     ports:
       - "21:21"
       - "30000-30009:30000-30009"
@@ -23,7 +25,7 @@ services:
 
   mongo:
     image: mongo:4.0
-    restart: always
+    #restart: always
     ports:
       - 27017:27017
   
